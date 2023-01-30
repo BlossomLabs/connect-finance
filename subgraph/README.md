@@ -1,3 +1,3 @@
-# Finance Connector
+# Finance Subgraph
 
-Connector and Subgraph for the Aragon Finance app.
+Subgraph for the Finance app.
