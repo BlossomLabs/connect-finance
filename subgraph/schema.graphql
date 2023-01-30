@@ -1,0 +1,27 @@
+type Transaction @entity {
+  id: ID!
+  orgAddress: Bytes!
+  appAddress: Bytes!
+  token: Bytes!
+  entity: Bytes!
+  isIncoming: Boolean!
+  amount: BigInt!
+  date: BigInt!
+  reference: String!
+  transactionHash: Bytes!
+}
+
+type TokenBalance @entity {
+  id: ID!
+  orgAddress: Bytes!
+  appAddress: Bytes!
+  token: Bytes!
+  balance: BigInt!
+}
+
+type AragonInfo @entity {
+  id: ID!
+  orgs: [Bytes!]!
+  apps: [Bytes!]!
+  tokens: [Bytes!]!
+}
