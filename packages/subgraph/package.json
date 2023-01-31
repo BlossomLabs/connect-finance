@@ -1,5 +1,6 @@
 {
   "name": "@blossom-labs/subgraph-finance",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "codegen": "rm -rf generated; graph codegen",
