@@ -27,7 +27,7 @@ export function handleNewTransaction(event: NewTransactionEvent): void {
 
   const tokenBalance = _getTokenBalanceEntity(
     event.address,
-    transaction.token as Address
+    Address.fromBytes(transaction.token)
   )
 
   _updateTokenBalance(tokenBalance, transaction)
