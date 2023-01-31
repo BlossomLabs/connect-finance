@@ -6,10 +6,10 @@
     "build": "rm -rf build; graph build",
     "manifest-mainnet": "scripts/build-manifest.sh mainnet",
     "manifest-mainnet-staging": "env STAGING=true scripts/build-manifest.sh mainnet",
-    "manifest-xdai": "scripts/build-manifest.sh xdai",
+    "manifest-gnosis": "scripts/build-manifest.sh gnosis",
     "deploy-mainnet": "scripts/deploy.sh blossomlabs finance mainnet",
     "deploy-mainnet-staging": "env STAGING=true scripts/deploy.sh blossomlabs finance mainnet",
-    "deploy-xdai": "scripts/deploy.sh blossomlabs finance xdai"
+    "deploy-gnosis": "scripts/deploy.sh blossomlabs finance gnosis"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.19.0",

@@ -19,7 +19,7 @@ export function subgraphUrlFromChainId(chainId: number) {
     return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-rinkeby"
   }
   if (chainId === 100) {
-    return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-xdai"
+    return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-gnosis"
   }
   return null
 }
