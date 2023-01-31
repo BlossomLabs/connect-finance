@@ -9,7 +9,9 @@
     "manifest-gnosis": "scripts/build-manifest.sh gnosis",
     "deploy-mainnet": "scripts/deploy.sh blossomlabs finance mainnet",
     "deploy-mainnet-staging": "env STAGING=true scripts/deploy.sh blossomlabs finance mainnet",
-    "deploy-gnosis": "scripts/deploy.sh blossomlabs finance gnosis"
+    "deploy-gnosis": "scripts/deploy.sh blossomlabs finance gnosis",
+    "create-local": "graph create an-delay --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy an-delay --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.35.0",
