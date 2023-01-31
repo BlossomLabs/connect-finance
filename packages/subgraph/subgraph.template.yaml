@@ -22,7 +22,7 @@ templates:
       abi: Finance
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
         - Transaction

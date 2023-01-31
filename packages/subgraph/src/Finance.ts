@@ -4,16 +4,12 @@ import {
   Finance as FinanceContract,
 } from '../generated/templates/Finance/Finance'
 
-import { Vault as VaultContract } from '../generated/templates/Finance/Vault'
 import {
   Transaction as TransactionEntity,
   TokenBalance as TokenBalanceEntity,
 } from '../generated/schema'
 
 export function handleNewTransaction(event: NewTransactionEvent): void {
-  // const financeApp = FinanceContract.bind(event.address)
-  // const vaultAddress = financeApp.vault()
-  // const vaultContract = VaultContract.bind(vaultAddress)
 
   const transaction = _getTransactionEntity(
     event.address,
@@ -55,7 +51,7 @@ function _getTransactionEntity(
     transaction.appAddress = appAddress
   }
 
-  return transaction!
+  return transaction
 }
 
 function _getTransactionEntityId(
@@ -88,7 +84,7 @@ function _getTokenBalanceEntity(
     tokenBalance.appAddress = appAddress
   }
 
-  return tokenBalance!
+  return tokenBalance
 }
 
 function _getTokenBalanceId(appAddress: Address, token: Address): string {
