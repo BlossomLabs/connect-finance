@@ -18,9 +18,13 @@ export function subgraphUrlFromChainId(chainId: number) {
   if (chainId === 4) {
     return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-rinkeby"
   }
+  if (chainId === 10) {
+    return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-optimism"
+  }
   if (chainId === 100) {
     return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-gnosis"
   }
+
   return null
 }
 
