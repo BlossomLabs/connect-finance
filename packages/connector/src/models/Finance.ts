@@ -17,7 +17,7 @@ export default class Finance {
     this.#connector = connector
   }
 
-  async disconnect() {
+  async disconnect(): Promise<void> {
     await this.#connector.disconnect()
   }
 
@@ -51,7 +51,17 @@ export default class Finance {
     )
   }
 
-  onBalance(
+  balanceForApp(
+    { first = 1000, skip = 0 } = {}
+  ): Promise<TokenBalance> {
+    return this.#connector.balanceForApp(
+      this.#appAddress,
+      first,
+      skip
+    )
+  }
+
+  onBalanceForApp(
     { first = 1000, skip = 0 } = {},
     callback?: SubscriptionCallback<TokenBalance>
   ): SubscriptionResult<TokenBalance> {

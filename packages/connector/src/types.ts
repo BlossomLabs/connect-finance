@@ -23,6 +23,7 @@ export interface TokenBalanceData {
   balance: string
 }
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IFinanceConnector {
   disconnect(): Promise<void>
   transactionsForApp(
@@ -49,6 +50,11 @@ export interface IFinanceConnector {
     skip: number,
     callback: SubscriptionCallback<TokenBalance>
   ): SubscriptionHandler
+  balanceForApp(
+    appAddress: string,
+    first: number,
+    skip: number
+  ): Promise<TokenBalance>
   onBalanceForApp(
     appAddress: string,
     first: number,

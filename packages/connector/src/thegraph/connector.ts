@@ -11,7 +11,7 @@ import TokenBalance from "../models/TokenBalance"
 import * as queries from "./queries"
 import { parseTransactions, parseTokenBalances } from "./parsers"
 
-export function subgraphUrlFromChainId(chainId: number) {
+export function subgraphUrlFromChainId(chainId: number): string | null {
   if (chainId === 1) {
     return "https://api.thegraph.com/subgraphs/name/blossomlabs/aragon-finance-mainnet"
   }
@@ -49,7 +49,7 @@ export default class FinanceConnectorTheGraph implements IFinanceConnector {
     })
   }
 
-  async disconnect() {
+  async disconnect(): Promise<void> {
     this.#gql.close()
   }
 
@@ -103,6 +103,18 @@ export default class FinanceConnectorTheGraph implements IFinanceConnector {
       queries.BALANCE_FOR_TOKEN("subscription"),
       { appAddress, tokenAddress, first, skip },
       callback,
+      (result: QueryResult) => parseTokenBalances(result)
+    )
+  }
+
+  balanceForApp(
+    appAddress: Address,
+    first: number,
+    skip: number
+  ): Promise<TokenBalance> {
+    return this.#gql.performQueryWithParser<TokenBalance>(
+      queries.BALANCE_FOR_APP("query"),
+      { appAddress, first, skip },
       (result: QueryResult) => parseTokenBalances(result)
     )
   }
