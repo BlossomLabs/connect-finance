@@ -1,5 +1,11 @@
 # @blossom-labs/connect-finance
 
+## 0.1.2
+
+### Patch Changes
+
+- dfa909d: Add missing `balanceForApp` method
+
 ## 0.1.1
 
 ### Patch Changes
